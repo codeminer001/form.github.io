@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Registration Form</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #ffffff; /* Set background color to white */
+      color: #ffffff;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+    }
+
+    .container {
+      max-width: 300px;
+      padding: 20px;
+      background-color: #111111;
+      border: 1px solid #555555;
+      border-radius: 5px;
+      box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+      margin: 20px;
+      position: relative;
+    }
+
+    h2 {
+      text-align: center;
+      margin-bottom: 20px;
+      margin-top: 0;
+    }
+
+    label {
+      display: none; /* Hide labels */
+    }
+
+    input[type="text"],
+    input[type="password"],
+    input[type="tel"],
+    select,
+    input[type="date"] {
+      width: 100%;
+      padding: 8px;
+      border-radius: 4px;
+      border: 1px solid #cccccc;
+      box-sizing: border-box;
+      background-color: #222222;
+      color: #ffffff;
+      margin-bottom: 10px;
+    }
+
+    .password-container {
+      position: relative;
+    }
+
+    .show-password {
+      position: absolute;
+      top: 50%;
+      right: 5px;
+      transform: translateY(-50%);
+      background-color: transparent;
+      border: none;
+      color: #ffffff;
+      cursor: pointer;
+    }
+
+    input[type="submit"] {
+      background-color: #4CAF50;
+      color: #ffffff;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      font-size: 16px;
+      width: 100%;
+    }
+
+    input[type="submit"]:hover {
+      background-color: #45a049;
+    }
+
+    .form-group {
+      margin-bottom: 10px;
+    }
+
+    .form-group.inline {
+      display: flex;
+      justify-content: space-between;
+    }
+
+    .form-group.inline input[type="text"],
+    .form-group.inline select {
+      width: 49%;
+    }
+
+    .form-group.date {
+      display: flex;
+      align-items: center;
+    }
+
+    .form-group.date label {
+      display: block;
+      width: 30%;
+      margin-right: 10px;
+    }
+
+    .form-group.gender {
+      display: flex;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+
+    .form-group.gender label {
+      display: inline-block;
+      margin-right: 10px;
+      margin-bottom: 5px;
+      font-size: 14px; /* Adjust the font size here */
+    }
+
+    .form-group.gender input[type="radio"] {
+      margin-right: 5px;
+    }
+
+    .signature {
+      position: absolute;
+      bottom: 10px;
+      right: 10px;
+      font-size: 12px;
+      color: #888888;
+    }
+
+    @media (min-width: 768px) {
+      .container {
+        padding: 75px;
+      }
+
+      input[type="text"],
+      input[type="password"],
+      input[type="tel"],
+      select,
+      input[type="date"] {
+        padding: 9px;
+        font-size: 13px;
+        width: 100%;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h2>Registration Form</h2>
+    <form>
+      <div class="form-group inline">
+        <input type="text" id="firstName" name="firstName" placeholder="First Name" required>
+        <input type="text" id="surname" name="surname" placeholder="Surname" required>
+      </div>
+
+      <div class="form-group">
+        <input type="text" id="email" name="email" placeholder="Email" required>
+      </div>
+
+      <div class="form-group">
+        <input type="tel" id="contactNumber" name="contactNumber" placeholder="Contact Number" required>
+      </div>
+
+      <div class="form-group password-container">
+        <input type="password" id="password" name="password" placeholder="Password" required>
+        <button type="button" id="showPasswordButton" class="show-password" onclick="togglePassword('password', 'showPasswordButton')">Show</button>
+      </div>
+
+      <div class="form-group password-container">
+        <input type="password" id="confirmPassword" name="confirmPassword" placeholder="Confirm Password" required>
+        <button type="button" id="showConfirmPasswordButton" class="show-password" onclick="togglePassword('confirmPassword', 'showConfirmPasswordButton')">Show</button>
+      </div>
+
+      <div class="form-group date">
+        <label for="dob">D.O.B:</label>
+        <input type="date" id="dob" name="dob" required>
+      </div>
+
+      <div class="form-group gender">
+        <label>Gender:</label>
+        <input type="radio" id="male" name="gender" value="male" required>
+        <label for="male">Male</label>
+        <input type="radio" id="female" name="gender" value="female" required>
+        <label for="female">Female</label>
+        <input type="radio" id="other" name="gender" value="other" required>
+        <label for="other">Other</label>
+      </div>
+
+      <input type="submit" value="Register">
+
+      <div class="signature">Chaitu</div>
+    </form>
+  </div>
+</body>
+</html>
